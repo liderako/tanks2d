@@ -7,6 +7,7 @@ namespace Weapons
     public class Weapon : MonoBehaviour, IWeapon
     {
         [SerializeField] private float _damage;
+        [SerializeField] private float _speedFlyBullet;
         [SerializeField] private float _coolDown;
         [SerializeField] private GameObject bullet;
         
@@ -22,9 +23,11 @@ namespace Weapons
             set { _coolDown = value; }
         }
 
-        public void Attack()
+        public void Attack(Vector3 dir)
         {
-            // spawn bullet
+            GameObject go = Instantiate(bullet, transform);
+            go.transform.Rotate(0, 0, transform.parent.transform.eulerAngles.z);
+            go.GetComponent<Bullet>().Fly(dir, _damage, _speedFlyBullet, gameObject);
         }
     }
 }

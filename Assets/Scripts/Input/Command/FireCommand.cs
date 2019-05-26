@@ -8,7 +8,7 @@ namespace InputGame
     {
         public void Execute(GameObject go)
         {
-
+            go.SendMessage("Attack");
         }
     }
 }

@@ -7,17 +7,25 @@ namespace PlayableObjects
 {
     public class Player : AliveObject, IMovingObject, IChanginWeapon, IAttackingObject
     {
-        [SerializeField]private float _speed;
-
+        [SerializeField]protected float _speed;
+        
+        // optimization
+        protected Transform _transform;
+        
+        void Start()
+        {
+            _transform = transform;
+        }
+        
         public float speed 
         {
             get {return _speed;}
             set {_speed = value;}
         }
 
-        public virtual void Move(Vector2 dir) 
+        public virtual void Move(Vector3 dir) 
         {
-            // default move, nothing.
+            _transform.Translate(dir * Time.deltaTime * _speed, Space.World);
         }
 
         public virtual void ChangeWeapon(Weapon weapon)

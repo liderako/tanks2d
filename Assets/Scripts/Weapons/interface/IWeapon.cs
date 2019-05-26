@@ -1,4 +1,6 @@
-﻿namespace Weapons
+﻿using UnityEngine;
+
+namespace Weapons
 {
     public interface IWeapon
     {
@@ -14,6 +16,6 @@
             set;
         }
 
-        void Attack();
+        void Attack(Vector3 dir);
     }
 }
