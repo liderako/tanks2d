@@ -7,4 +7,5 @@ Buttons arrows move player
 
 Buttons X for firing
 
-Button Q, W for change weapon```
+Button Q, W for change weapon
+```
