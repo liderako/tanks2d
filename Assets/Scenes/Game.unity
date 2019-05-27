@@ -1193,6 +1193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemy:
   - {fileID: 5274842512881754686, guid: 9a1badc3aca0b4ba4baf3da02972e313, type: 3}
+  - {fileID: 5274842512881754686, guid: 70c1930af07ea4831a276b6236ae4ac9, type: 3}
   _transform: {fileID: 915609683}
 --- !u!1 &964233697
 GameObject:
