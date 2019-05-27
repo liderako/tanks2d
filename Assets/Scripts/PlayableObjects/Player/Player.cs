@@ -37,5 +37,11 @@ namespace PlayableObjects
         {
             // default attack, nothing.
         }
+
+        public override void Dead()
+        {
+            base.Dead();
+            GameManager.gm.SendMessage("DeadPlayer");
+        }
     }
 }

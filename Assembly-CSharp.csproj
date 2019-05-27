@@ -54,6 +54,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Animation\Rotate.cs" />
+    <Compile Include="Assets\Scripts\Animation\Scale.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Input\Command\ChangingWeaponCommand.cs" />
     <Compile Include="Assets\Scripts\Input\Command\FireCommand.cs" />
     <Compile Include="Assets\Scripts\Input\Command\interface\ICommand.cs" />
@@ -62,6 +65,9 @@
     <Compile Include="Assets\Scripts\Input\HandlerInput\PlayerHandlerInput.cs" />
     <Compile Include="Assets\Scripts\PlayableObjects\AliveObject.cs" />
     <Compile Include="Assets\Scripts\PlayableObjects\Enemy\Enemy.cs" />
+    <Compile Include="Assets\Scripts\PlayableObjects\Enemy\Factory\FactoryEnemyGameObject.cs" />
+    <Compile Include="Assets\Scripts\PlayableObjects\Enemy\Kamikaze.cs" />
+    <Compile Include="Assets\Scripts\PlayableObjects\Enemy\State\EnemyStateHunt.cs" />
     <Compile Include="Assets\Scripts\PlayableObjects\Interface\IAliveObject.cs" />
     <Compile Include="Assets\Scripts\PlayableObjects\Interface\IAttackingObject.cs" />
     <Compile Include="Assets\Scripts\PlayableObjects\Interface\IChanginWeapon.cs" />

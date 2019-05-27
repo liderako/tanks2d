@@ -12,6 +12,10 @@ namespace PlayableObjects
         public virtual void GetHit(float damage)
         {
             _hp = _hp - damage * (1.0f - _defence);
+            if (hp < 0)
+            {
+                Dead();
+            }
         }
 
         public float hp
@@ -24,6 +28,11 @@ namespace PlayableObjects
         {
             get { return _defence; }
             set { _defence = value; }
+        }
+
+        public virtual void Dead()
+        {
+            Destroy(gameObject);
         }
     }
 }

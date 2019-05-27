@@ -2,16 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+namespace PlayableObjects
 {
-    // Start is called before the first frame update
-    void Start()
+    public abstract class Enemy : AliveObject, IMovingObject
     {
-        
-    }
+        [SerializeField] private float _speed;
 
-    // Update is called once per frame
-    void Update()
-    {
+
+        public virtual void Move(Vector3 position)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, position, speed);
+        }
+        
+        public float speed 
+        {
+            get {return _speed;}
+            set {_speed = value;}
+        }
+
+        public override void Dead()
+        {
+            base.Dead();
+            GameManager.gm.SendMessage("DeadEnemy");
+        }
     }
 }
